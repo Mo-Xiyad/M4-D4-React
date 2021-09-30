@@ -20,7 +20,7 @@ class SingleBook extends Component {
         return (
             <Card
 
-                key={this.props.books.asin}
+                key={this.props.books._id}
                 style={{ width: "24%", marginTop: "10px" }}
                 className={this.state.selected ? 'selected' : null}
 
@@ -43,8 +43,8 @@ class SingleBook extends Component {
                     this.state.selected
                         ?
                         <div>
-                            <CommentArea id={this.props.books.asin} />
-                            <AddComment id={this.props.books.asin} />
+                            <CommentArea Key={this.props.books.asin} id={this.props.books.asin} />
+                            <AddComment Key={this.props.books.asin} id={this.props.books.asin} />
                         </div>
 
                         : null

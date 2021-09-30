@@ -43,10 +43,10 @@ class BookList extends Component {
                     {
                         !this.state.query
                             ? this.props.list.map((books) => (
-                                <SingleBook books={books} />
+                                <SingleBook Key={books.asin} books={books} />
                             ))
                             : this.filterBookList(this.props.list).map((books) => (
-                                <SingleBook books={books} id={books.asin} />
+                                <SingleBook Key={books._id} books={books} id={books.asin} />
                                 // <SingleBook image={books.img} title={books.title} /> // this is same as the line above   
                             ))
 

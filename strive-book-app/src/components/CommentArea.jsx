@@ -48,7 +48,7 @@ class CommentArea extends Component {
                         <ListGroup className="d-flex" key={com._id}>
                             <ListGroup.Item className="justify-content-around">
                                 {com.comment}
-                                <DeleteBook id={com._id} />
+                                <DeleteBook Key={com._id} id={com._id} />
                             </ListGroup.Item>
                         </ListGroup>
 
