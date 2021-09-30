@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import ListGroup from "react-bootstrap/ListGroup";
-import AddComment from './AddComment'
+import DeleteBook from './DeleteBook'
 
 class CommentArea extends Component {
     state = {
@@ -10,7 +10,7 @@ class CommentArea extends Component {
 
     fetchComments = async (id) => {
 
-        var myHeaders = new Headers();
+        const myHeaders = new Headers();
         myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTRiMjFlNjRiYjUzZDAwMTViMTllZDYiLCJpYXQiOjE2MzIzMTM4MzAsImV4cCI6MTYzMzUyMzQzMH0.TlCoWBwSkaUXG_HyFMfAQnvBaxp9w-P3yR9s7r6R1yE");
 
         try {
@@ -32,6 +32,8 @@ class CommentArea extends Component {
         }
     }
 
+
+
     componentDidMount = async () => {
         this.fetchComments(this.props.id)
     }
@@ -43,12 +45,16 @@ class CommentArea extends Component {
                 {
                     this.state.comments.map(com => (
 
-                        <ListGroup>
-                            <ListGroup.Item>{com.comment}</ListGroup.Item>
+                        <ListGroup className="d-flex" key={com._id}>
+                            <ListGroup.Item className="justify-content-around">
+                                {com.comment}
+                                <DeleteBook id={com._id} />
+                            </ListGroup.Item>
                         </ListGroup>
+
                     ))
                 }
-                <AddComment />
+                {/* <AddComment /> */}
             </div>
 
         )

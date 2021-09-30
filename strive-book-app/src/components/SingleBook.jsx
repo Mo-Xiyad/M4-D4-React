@@ -2,6 +2,7 @@ import { Component } from "react";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import CommentArea from './CommentArea'
+import AddComment from './AddComment'
 
 class SingleBook extends Component {
 
@@ -21,11 +22,12 @@ class SingleBook extends Component {
 
                 key={this.props.books.asin}
                 style={{ width: "24%", marginTop: "10px" }}
-                onClick={this.selectCard}
                 className={this.state.selected ? 'selected' : null}
 
             >
-                <Card.Img variant="top" src={this.props.books.img} />
+                <Card.Img variant="top" src={this.props.books.img}
+                    onClick={this.selectCard}
+                />
                 {/* <Card.Img variant="top" src={this.props.image} />  this line works only if the book is passed as "image=books.img"  */}
                 <Card.Body>
                     <Card.Title>{this.props.books.title}</Card.Title>
@@ -40,7 +42,10 @@ class SingleBook extends Component {
                 {
                     this.state.selected
                         ?
-                        <CommentArea id={this.props.books.asin} />
+                        <div>
+                            <CommentArea id={this.props.books.asin} />
+                            <AddComment id={this.props.books.asin} />
+                        </div>
 
                         : null
 
