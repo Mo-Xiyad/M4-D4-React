@@ -1,4 +1,5 @@
 import SingleBook from './SingleBook';
+import CommentArea from './CommentArea';
 import { Component } from 'react'
 import Container from 'react-bootstrap/Container'
 import Jumbotron from 'react-bootstrap/Jumbotron'
@@ -51,8 +52,7 @@ class Home extends Component {
                         </Row>
                     </div>
                 </Jumbotron>
-
-                <h1 className="text-white">{ }</h1>
+                <CommentArea />
             </Container>
 
 

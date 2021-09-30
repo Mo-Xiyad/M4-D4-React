@@ -46,7 +46,7 @@ class BookList extends Component {
                                 <SingleBook books={books} />
                             ))
                             : this.filterBookList(this.props.list).map((books) => (
-                                <SingleBook books={books} />
+                                <SingleBook books={books} id={books.asin} />
                                 // <SingleBook image={books.img} title={books.title} /> // this is same as the line above   
                             ))
 
