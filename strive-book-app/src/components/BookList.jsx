@@ -1,6 +1,7 @@
 import SingleBook from "./SingleBook";
 import { Component } from "react";
 import Form from "react-bootstrap/Form";
+import Container from "react-bootstrap/Container";
 
 
 class BookList extends Component {
@@ -27,7 +28,7 @@ class BookList extends Component {
 
     render() {
         return (
-            <div>
+            <Container>
                 <div>
                     <Form.Group className="m-3">
                         <Form.Control
@@ -57,7 +58,7 @@ class BookList extends Component {
 
 
                 </div>
-            </div>
+            </Container>
         );
     }
 }

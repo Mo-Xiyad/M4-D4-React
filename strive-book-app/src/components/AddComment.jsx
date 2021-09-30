@@ -2,6 +2,7 @@ import { Component } from 'react'
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
+import Loader from './Loader'
 
 class AddComment extends Component {
     state = {
@@ -85,8 +86,8 @@ class AddComment extends Component {
 
     render() {
         return (
-            <Container className="d-flex justify-content-center">
-                <Form onSubmit={this.submitForm}>
+            <Container className="d-flex justify-content-center review-form my-4">
+                <Form onSubmit={this.submitForm} className="py-3">
 
                     <Form.Group className="mb-3">
                         <Form.Label>Comment on the book here</Form.Label>
@@ -107,7 +108,7 @@ class AddComment extends Component {
                         Add comment
                     </Button>
                 </Form>
-
+                {/* <Loader /> */}
             </Container>
         )
     }

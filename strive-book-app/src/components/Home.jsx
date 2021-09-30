@@ -52,7 +52,7 @@ class Home extends Component {
                         </Row>
                     </div>
                 </Jumbotron>
-                <CommentArea />
+                {/* <CommentArea /> */}
             </Container>
 
 

@@ -22,7 +22,7 @@ class SingleBook extends Component {
 
                 key={this.props.books._id}
                 style={{ width: "24%", marginTop: "10px" }}
-                className={this.state.selected ? 'selected' : null}
+                className={this.state.selected ? 'selected' : 'card-style'}
 
             >
                 <Card.Img variant="top" src={this.props.books.img}
@@ -30,7 +30,7 @@ class SingleBook extends Component {
                 />
                 {/* <Card.Img variant="top" src={this.props.image} />  this line works only if the book is passed as "image=books.img"  */}
                 <Card.Body>
-                    <Card.Title>{this.props.books.title}</Card.Title>
+                    <Card.Title className="clamp">{this.props.books.title}</Card.Title>
                 </Card.Body>
 
 
